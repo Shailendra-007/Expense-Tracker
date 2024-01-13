@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sign up</title>
+
+    <!-- B-CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+
+<body>
+
+    <div class="login_section">
+        <div class="login_form_sect">
+            <h1 class="login_title"> Sign Up</h1>
+
+
+            <form action="/signup" method="post" onsubmit="return validation()">
+                <div class="form-floating ct_form_field">
+                    <input type="text" name="firstname" class="form-control" id="floatingInput" placeholder="First Name"
+                        value="Abc">
+                    <label for="floatingInput">First Name</label>
+                </div>
+                <div class="form-floating ct_form_field">
+                    <input type="text" name="lastname" class="form-control" id="floatingInput1" placeholder="Last Name"
+                        value="Pqr">
+                    <label for="floatingInput1">Last Name</label>
+                </div>
+                <div class="form-floating ct_form_field">
+                    <input type="text" name="email" class="form-control" id="floatingInput2" placeholder="Email"
+                        value="info@example.com">
+                    <label for="floatingInput2">Email</label>
+                </div>
+                <div class="form-floating ct_form_field ct_form_icon_group">
+                    <input type="password" name="password" class="form-control" id="floatingInput3"
+                        placeholder="Password">
+                    <span class="far fa-eye-slash" aria-hidden="true"></span>
+                    <label for="floatingInput3">Password</label>
+                </div>
+
+                <div class="form-floating ct_form_field ct_form_icon_group">
+                    <input type="password" name="confirmpassword" class="form-control" id="floatingInput4"
+                        placeholder="Password">
+                    <span class="far fa-eye-slash" aria-hidden="true"></span>
+                    <label for="floatingInput4">Confirm Password</label>
+                </div>
+                <div class=" text-center mt20 mb10">
+
+                    <label for="gender"><b>Gender</b></label><br>
+
+                    <input type="radio" name="gender" class="gender1" value="male" id="Male" required> 
+                    <label for="Male">Male</label>
+                    <input type="radio" name="gender" class="gender1" value="female" id="Female" required>
+                    <label for="Female">Female</label>
+                    <input type="radio" name="gender" class="gender1" value="others" id="Others" required>
+                    <label for="Others">Others</label>
+                </div>
+
+                <div class="row mt15">
+                    <div class="col">
+                        <a href="/signin"><button class="btn btn-lg btn-primary btn-block text-center"
+                                type="submit">Sign
+                                Up</button></a>
+                    </div>
+                    <div class="col"><a href="/home" class="btn btn-lg blue-outline-btn btn-block text-center"
+                            type="button" name="cancel">Cancel</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function validation() {
+            let n = document.getElementById('floatingInput').value;
+            let ln = document.getElementById('floatingInput1').value;
+            let email = document.getElementById('floatingInput2').value;
+            let pass = document.getElementById('floatingInput3').value;
+            let cpass = document.getElementById('floatingInput4').value;
+            let gen1=document.getElementsById('male').value;
+            let gen2=document.getElementsById('female').value;
+            let gen3=document.getElementsById('others').value;
+
+
+            // name
+            let regName = /^[a-zA-Z]+$/;
+            if (!regName.test(n)) {
+                // document.getElementById('nameError').innerHTML = "** invalid name..";
+                alert("** invalid name.");
+                return false;
+            }
+
+            // last name
+            let regFName = /^[a-zA-Z]+$/;
+            if (!regFName.test(ln)) {
+                // document.getElementById('fatherNameError').innerHTML = "** invalid fathers name..";
+                alert("** invalid last name..");
+                return false;
+            }
+            //email
+            var validRegex = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+            if (!validRegex.test(email)) {
+                alert("** invalid email id..")
+                return false;
+            }
+            // password
+             var password = pass;
+                if (password == "") {
+                    alert("Password must be filled out");
+                    return false;
+            }
+            // confirm password
+            var Cpassword = cpass;
+                if (Cpassword == "") {
+                    alert("Confirm password must be filled out");
+                    return false;
+            }
+            // gender
+            let gender1 = gen1;
+            let gender2 = gen2;
+            let gender3 = gen3;
+                if (gender1 == "" && gender2== "" && gender3== "") {
+                    alert("Gender must be filled out");
+                    return false;
+                }
+    }
+    </script>
+
+</body>
+
+</html>

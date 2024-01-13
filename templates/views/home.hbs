@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="slideshow.html"> -->
+  <style>
+    .headings{
+  align-content: center;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 8px;
+  /* margin-right: 20%;
+  margin-left: 20%; */
+  background: #eff2ee;
+}
+
+h1{
+  color: rgb(42, 48, 165);
+}
+    .topnav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    pre {
+      text-align: "center";
+      display: block;
+      color: coral;
+      font-size: 180%;
+
+    }
+
+    button {
+      background-color: #189c09;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+
+      font-size: 16px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      position: absolute;
+      padding-top: 10px;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 2.0s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    #image {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="/home">Expenses Tracker</a>
+    <div style="float:right">
+      <a href="/signin"><button> login/sign up</button></a>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img id="image"
+        src="https://media.istockphoto.com/photos/black-calculator-and-financial-statistics-on-clipboard-pad-picture-id871428204?k=20&m=871428204&s=612x612&w=0&h=Rc9QHTbei8V5takX_u4vs6uW-Tvm2g-m_0Ejz6nMfLc="
+        style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img id="image"
+        src="https://media.istockphoto.com/photos/business-man-chasing-money-disappearing-gradually-picture-id1369238742?k=20&m=1369238742&s=612x612&w=0&h=Oy7XHx5Vyf3x61AZ5ohHWp1hGEjWhoAu6cFc3dzfG1Y="
+        style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img id="image"
+        src="https://media.istockphoto.com/photos/dollar-money-bag-and-judges-gavel-litigation-dispute-resolution-of-picture-id1406424332?k=20&m=1406424332&s=612x612&w=0&h=cO7UusKT6U1LQUeRHVb48SqwHwyNR2K7z1db6dBFBmA="
+        style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+  </script>
+  <div class="content">
+    <div class="headings">
+      <h1>Expenses Tracker</h1>
+      <h2 text-align="center">"Simple way to manage your expenses."</h2>
+
+      <p>This web application "Expenses Tracker" is developed to manage the daily expenses in more efficient and
+        manageable way.</p>
+      <p>Using this website we can reduce manual calculation.</p>
+      <p>User can enter their expenses which they are spending daily or weekly basis.</p>
+      <p>Expenses viewing list is enabled where user can view expenditure list.</p>
+
+
+    </div>
+  </div>
+  </script>
+</body>
+
+</html>

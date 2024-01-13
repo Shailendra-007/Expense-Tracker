@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> select page</title>
+
+    <style>
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .heading{
+            font-size: 24px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        b{
+            color: rgb(8, 31, 131);
+        }
+        /* .container{
+            background: url(../assets/img/trackexpenses.jpg);
+            background-repeat: no-repeat;
+            background: center;
+            background: fixed;
+            background-size: cover;
+            width: 100%;
+            height: 625px;
+        }
+        .container::before{
+            content:"";
+            background-image: url('../assets/img/trackexpenses.jpg');
+            background-size: cover;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            right:0px;
+            left: 0px;
+            background-color: rgba(0,0,0,0.25);
+        } */
+       
+/* CSS */
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 15px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 2px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 10px 15px;
+  border-radius: 6px;
+  width: 80%;
+  height: 80%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 15px;
+    min-width: 196px;
+  }
+
+}
+       
+    </style>
+</head>
+<body>
+   <div class="container">
+        <h3 class="heading">Welcome to the <b>Expenses Tracker</b></h3>
+
+        <p>To add new item in a expenses, click on Add Expenses: </p>
+        <a href="/AddExpense"><button class="button-64" role="button"><span class="text"> Add Expenses</span></button></a>
+
+        <p>For viewing list of expenses and to remove expenses, click on View Expenses: </p>
+        <a  href="/view"><button class="button-64" role="button"><span class="text">View Expenses</span></button></a>
+    </div>
+</body>
+</html>

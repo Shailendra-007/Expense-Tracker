@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- B-CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+
+<body>
+    {{!-- <div class="topnav">
+        <a class="nav active" href="/AddExpense">Add Expenses</a>
+        <a class="nav" href="/view">View Expenses</a>
+    </div> --}}
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <h3 class="secondTitle">Add a new item :</h3>
+            </div>
+            <div class="col-lg-6 col-md-6 text-right"></div>
+        </div>
+        <!-- content section -->
+        <div class="content_section">
+            <div class="row justify-content-md-center">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+
+                    <form action="/AddExpense" method="POST" onsubmit="return validation()">
+                        <div class="form-floating ct_form_field">
+                            <input type="date" name="date" class="form-control" id="form_date">
+                            <label for="form_date" class="floating_input">Date :</label>
+                        </div>
+
+                        <div class="form-floating ct_form_field">
+
+                            <select class="form-control" name="category" id="form_type">
+                               <!-- <option value="chooseOne">Choose one...</option>-->
+                                <option value="All">All</option>
+                                <option value="Education">Education</option>
+                                <option value="Medical">Medical</option>
+                                <option value="Bills">Bills</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Emergency">Emergency</option>
+                                <option value="Transport">Transport</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label for="form_type">Category:</label>
+                        </div>
+
+                        <div class="form-floating ct_form_field">
+                            <input type="text" name="name" class="form-control" id="form_name">
+                            <label for="form_name" class="floating_input">Name :</label>
+                        </div>
+
+                        <div class="form-floating ct_form_field">
+                            <input type="number" name="amount" class="form-control" id="form_amount">
+                            <label for="form_amount" class="floating_input">Amount :</label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6 mt-20 text-center">
+                                <a href="/AddExpense"><button
+                                        class="btn btn-block btn-lg btn-primary text-center btn-block mb15"
+                                        type="submit" onclick="alertmsgsuccess()">Add</button> </a>
+                            </div>
+                            <div class=" col-lg-6 mt-20 text-center">
+                                <a href="/index" class="btn btn-block btn-lg btn-primary text-center btn-block mb15"
+                                    type="button" >Back</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {{!-- <section class="content mt30">
+                <table class="table  custom_table1">
+                    <thead>
+                        <tr class="color">
+                            <th>Type</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenseTable">
+
+                    </tbody>
+                </table>
+            </section> --}}
+        </div>
+        <!-- <script src="js/Add expense.js"> 
+        </script>id="expForm"-->
+        <script>
+            function validation() {
+            let name = document.getElementById('form_name').value;
+            let amount = document.getElementById('form_amount').value;
+            let Date = document.getElementById('form_date').value;
+            let category = document.getElementById('form_type').value;
+    
+           // name
+            var Cname = name;
+                if (Cname == "") {
+                    alert("Name must be filled out");
+                    return false;
+            }
+            let regName =/^[a-zA-Z]+$/;
+            if (!regName.test(name)) {
+                alert("** invalid name..");
+                return false;
+            }
+             // Date
+            var Cdate = Date;
+                if (Cdate == "") {
+                    alert("Date must be filled out");
+                    return false;
+            }
+             // category
+            var Checkcat = category;
+                if (Checkcat == "") {
+                    alert("Category must be filled out");
+                    return false;
+            }
+             // Amount
+            var Camount= amount;
+                if (Camount == "") {
+                    alert("Amount must be filled out");
+                    return false;
+            }
+          /*  // Date
+            let pattern =/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+            if(!pattern.test(Date))
+            {
+                alert("** incorrect date");
+                return false;
+            }*/
+
+           /* //Amount
+            let regPhoneNo= /^\d{10}$/;
+            if(!regPhoneNo.test(amount))
+            {
+                alert(" ** invalid Amount..");
+                return false;
+            }
+            */
+            }
+
+            function alertmsgsuccess(){
+                alert("Expenses added successfully!");
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>
