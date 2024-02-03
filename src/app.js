@@ -101,7 +101,11 @@ app.post("/signin", async (req, res) => {
             res.status(201).render("index");
         }
         else {
+<<<<<<< HEAD
             res.send("Invaid login details");
+=======
+            res.send("Invalid login details");
+>>>>>>> f36d75c (second Commit)
         }
 
     } catch (error) {
@@ -150,7 +154,11 @@ app.post("/filter", async (req, res) => {
                 $lt: new Date(to)
             }
         });
+<<<<<<< HEAD
         console.log(expenses, 'exop');
+=======
+        // console.log(expenses, 'exop');
+>>>>>>> f36d75c (second Commit)
         res.render('view', { expenses })
     } catch (error) {
         res.status(400).send("Invalid login details");
